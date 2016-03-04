@@ -1,9 +1,5 @@
 <?php
 
-// written by: Robert Adrion
-// tested by: Robert Adrion
-// debugged by: Robert Adrion
-
 	class stockRetriever {
 		//request URL for historical prices
 		private $requestURL_historical = "http://ichart.yahoo.com/table.csv?s=";
@@ -60,17 +56,15 @@
 			
 			return array('csv'=>$csv,'desc'=>$desc);
 			
-			
 		}
 		
 		//retrieve current price
 		public function retrieveCurrentPrice($ticker) {
 			//create URL
-			$URL = $this->requestURL_current.$ticker."&f=l1";
+			$URL = $this->requestURL_current.$ticker."&f=l1v";
 			//return CSV file
 			return $this->get_content($URL);
 		}
-		
 		
 	}
 ?>

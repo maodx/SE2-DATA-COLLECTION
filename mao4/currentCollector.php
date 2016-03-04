@@ -28,6 +28,7 @@
 		//echo $currentprices['StockID'];//
 		//extract current price
 		$stockExtractor->extractMyCurrentPrice($document, $stock['StockID']);
+		echo $stock['Ticker']; echo" update successful.";
 	}
 
 ?>

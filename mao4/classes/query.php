@@ -1,7 +1,5 @@
 <?php
-	// written by: Manoj Velagaleti
-	// tested by: Manoj Velagaleti
-	// debugged by: Manoj Velagaleti
+	
 	
 	class query {
 		
@@ -15,7 +13,7 @@
 			return "SELECT Date, Close FROM HistoricalPrices WHERE stockID = ? AND Date > STR_TO_DATE(?, '%Y-%m-%d') ORDER BY Date asc";
 		}
 		public function insert_myprice() {
-			return "INSERT INTO currentprices (StockID, Price, Datetime) VALUES (?,  ?, ?)";
+			return "INSERT INTO currentprices (StockID, Price, Datetime,Volume) VALUES (?,?,  ?, ?)";
 		}
 		public function update_myprice() {
 			return "UPDATE currentprices SET Price = ?, Datetime = ? WHERE StockID = ?";

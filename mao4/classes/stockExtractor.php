@@ -1,9 +1,5 @@
 <?php
 
-// written by: Mohammed Latif
-// tested by: Mohammed Latif
-// debugged by: Mohammed Latif
-
 	include_once "dbConnection.php";
 	include_once "query.php";
 	date_default_timezone_set("America/New_York"); 
@@ -106,8 +102,9 @@
 			$this->dbConnection->prepare($this->query->insert_myprice());
 			//bind values to SQL statement
 			$this->dbConnection->bind(2, $contents[0]);
-			$this->dbConnection->bind(3, date("Y-m-d H:i:s"));    //////////////////////雅虎是否返回时间？
+			$this->dbConnection->bind(3, date("Y-m-d H:i:s"));    //
 			$this->dbConnection->bind(1, $stockID);
+			$this->dbConnection->bind(4, $contents[1]);
 			//execute query
 			$this->dbConnection->execute();
 			//disconnect from database
